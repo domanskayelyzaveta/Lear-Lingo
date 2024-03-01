@@ -8,8 +8,9 @@ import {
   LogoWrapper,
   NavItems,
   NavList,
+  NavWrapper,
   Svg,
-} from "./Header";
+} from "./Header.styled";
 import sprite from "../../images/sprite.svg";
 
 const Header: React.FC = () => {
@@ -19,7 +20,7 @@ const Header: React.FC = () => {
         <FlagIcon />
         <LinkLogo>LearnLingo</LinkLogo>
       </LogoWrapper>
-      <nav>
+      <NavWrapper>
         <NavList>
           <li>
             <NavItems to="/">Home</NavItems>
@@ -28,7 +29,7 @@ const Header: React.FC = () => {
             <NavItems to="/teacher">Teachers</NavItems>
           </li>
         </NavList>
-      </nav>
+      </NavWrapper>
       <BtnWrapper>
         <BtnLogIn>
           <Svg>

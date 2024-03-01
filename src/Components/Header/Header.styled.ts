@@ -22,6 +22,8 @@ export const FlagIcon = styled.div`
 
 export const LogoWrapper = styled.div`
   display: flex;
+  align-items: center;
+  justify-content: center;
   gap: 8px;
 `;
 
@@ -31,6 +33,12 @@ export const LinkLogo = styled(NavLink)`
   line-height: 24px;
   letter-spacing: -0.4px;
   color: var(--text-color);
+`;
+
+export const NavWrapper = styled.nav`
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const NavList = styled.ul`
@@ -54,6 +62,13 @@ export const BtnWrapper = styled.div`
 export const Svg = styled.svg`
   width: 20px;
   height: 20px;
+  stroke: var(--orange);
+
+  & use {
+    &:hover {
+      stroke: var(--text-color);
+    }
+  }
 `;
 
 export const BtnLogIn = styled.button`
@@ -69,6 +84,11 @@ export const BtnLogIn = styled.button`
   font-weight: 700;
   line-height: 20px;
   color: var(--text-color);
+
+  &:hover {
+    color: var(--orange);
+    transition: color 0.3s ease-in-out;
+  }
 `;
 
 export const BtnRegister = styled.button`
@@ -78,6 +98,15 @@ export const BtnRegister = styled.button`
   padding: 14px 39px;
   color: var(--white);
 
+  border: none;
   border-radius: 12px;
   background: var(--text-color);
+
+  &:hover {
+    background-color: var(--orange);
+    color: var(--text-color);
+    transition:
+      background-color 0.4s ease,
+      color 0.4s ease;
+  }
 `;

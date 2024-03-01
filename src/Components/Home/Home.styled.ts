@@ -59,13 +59,19 @@ export const BtnGetStarted = styled.button`
   border-radius: 12px;
   border: none;
   background: var(--orange);
+
+  &:hover {
+    background-color: var(--text-color);
+    color: var(--orange);
+    transition: background-color 0.4s ease, color 0.4s ease;
+  }
 `;
 
 export const ListWrapper = styled.div`
-  width: 1344px;
+  width: 1324px;
   padding: 40px 123px;
   border-radius: 30px;
-  border: 1.5px dashed var(--orange);
+  border: 2px dashed var(--orange);
 `;
 
 export const StyledList = styled.ul`
