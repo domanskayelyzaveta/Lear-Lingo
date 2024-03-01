@@ -1,24 +1,45 @@
-import { NavLink, NavLinkProps } from "react-router-dom"
+import {
+  BtnLogIn,
+  BtnRegister,
+  BtnWrapper,
+  FlagIcon,
+  HeaderWrapper,
+  LinkLogo,
+  LogoWrapper,
+  NavItems,
+  NavList,
+  Svg,
+} from "./Header";
+import sprite from "../../images/sprite.svg";
 
 const Header: React.FC = () => {
-    return (
-        <>
-      <div/>
-      <NavLink>LearnLingo</NavLink>
+  return (
+    <HeaderWrapper>
+      <LogoWrapper>
+        <FlagIcon />
+        <LinkLogo>LearnLingo</LinkLogo>
+      </LogoWrapper>
       <nav>
-        <ul>
+        <NavList>
           <li>
-          <NavLink<NavLinkProps> to="/">Home</NavLink>
+            <NavItems to="/">Home</NavItems>
           </li>
           <li>
-          <NavLink<NavLinkProps> to="/teacher">Teachers</NavLink>
+            <NavItems to="/teacher">Teachers</NavItems>
           </li>
-        </ul>
+        </NavList>
       </nav>
-      </>
-    )
-  }
+      <BtnWrapper>
+        <BtnLogIn>
+          <Svg>
+            <use href={`${sprite}#log-in`}></use>
+          </Svg>
+          Log in
+        </BtnLogIn>
+        <BtnRegister>Registration</BtnRegister>
+      </BtnWrapper>
+    </HeaderWrapper>
+  );
+};
 
-  export default Header
-
-
+export default Header;
