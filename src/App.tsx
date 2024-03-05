@@ -3,11 +3,12 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home/HomePage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import Teachers from "./pages/Teachers/Teachers";
-import { useDispatch } from "react-redux";
+// import { useDispatch } from "react-redux";
 import { getTeachersThunk } from "./redux/thunks";
+import { useAppDispatch } from "./hooks/hook";
 
 const App: React.FC = () => {
-  const dispatch: any = useDispatch();
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     dispatch(getTeachersThunk());

@@ -1,5 +1,6 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { getTeachersThunk } from "./thunks";
+import { Teacher } from "../service/Api";
 
 interface FavoriteItem {
   favorite?: boolean;
@@ -11,10 +12,10 @@ interface FavoriteItem {
   rating: number;
   price_per_hour: number;
   lessons_done: number;
-  avatar_url: string;
-  lesson_info: string;
+  avatar_url?: string;
+  lesson_info?: string;
   conditions: string[];
-  experience: string;
+  experience?: string;
 }
 
 interface Filter {
@@ -62,7 +63,7 @@ const teacherSlice = createSlice({
       })
       .addCase(
         getTeachersThunk.fulfilled,
-        (state, action: PayloadAction<any>) => {
+        (state, action: PayloadAction<Teacher[]>) => {
           state.isLoading = false;
           state.error = null;
           state.teachersData = action.payload;
