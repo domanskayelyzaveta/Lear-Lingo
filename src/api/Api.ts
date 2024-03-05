@@ -1,1 +1,0 @@
-// https://learn-lingo-backend-2.onrender.com/api/teachers //auth/signup  //auth/signin 
