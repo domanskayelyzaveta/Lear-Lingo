@@ -1,5 +1,11 @@
+import TeacherCard from "../../Components/TeacherCard/TeacherCard";
+
 const Teachers = () => {
-  return <div>Teachers</div>;
+  return (
+    <div>
+      <TeacherCard />
+    </div>
+  );
 };
 
 export default Teachers;

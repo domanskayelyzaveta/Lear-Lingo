@@ -18,9 +18,11 @@
   --body-color: #f4c8ba;
   --text-color: #121417;
   --sub-text: #121417b3;
-  --flag-blue: #338AF3;
-  --flag-yellow: #FFDA44;
-  --white: #FFF;
+  --flag-blue: #338af3;
+  --flag-yellow: #ffda44;
+  --white: #fff;
+  --grey: #8a8a89;
+  --light-grey: #12141733;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -58,7 +60,6 @@ li {
   margin-top: 0;
   margin-bottom: 0;
 }
-
 
 /* .link {
   text-decoration: none;

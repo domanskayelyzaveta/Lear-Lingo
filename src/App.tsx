@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home/HomePage";
-import Teachers from "./pages/Teachers/Teachers";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
+import Teachers from "./pages/Teachers/Teachers";
 
 const App: React.FC = () => {
   return (

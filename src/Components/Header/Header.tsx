@@ -26,7 +26,7 @@ const Header: React.FC = () => {
             <NavItems to="/">Home</NavItems>
           </li>
           <li>
-            <NavItems to="/teacher">Teachers</NavItems>
+            <NavItems to="/teachers">Teachers</NavItems>
           </li>
         </NavList>
       </NavWrapper>
