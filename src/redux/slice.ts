@@ -79,10 +79,14 @@
 // export const teacherReducer = teacherSlice.reducer;
 // export const {} = teacherSlice.actions;
 
-
-import { PayloadAction, createSlice, ThunkAction, Action } from "@reduxjs/toolkit";
+import {
+  PayloadAction,
+  createSlice,
+  ThunkAction,
+  Action,
+} from "@reduxjs/toolkit";
 import { getTeachersThunk } from "./thunks";
-import { Teacher } from "../service/Api";
+import { SuccessResponse, Teacher } from "../service/Api";
 import { RootState } from "./store";
 
 interface FavoriteItem {
@@ -109,7 +113,7 @@ interface Filter {
 
 interface TeacherState {
   favorites: FavoriteItem[];
-  teachersData: FavoriteItem[];
+  teachersData: SuccessResponse<Teacher[]>;
   isLoading: boolean;
   error: string | null;
   hasMorePages: boolean;
@@ -118,7 +122,8 @@ interface TeacherState {
 
 const initialState: TeacherState = {
   favorites: [],
-  teachersData: [],
+  // teachersData: [],
+  teachersData: { success: false, data: [] },
   isLoading: false,
   error: null,
   hasMorePages: true,
@@ -146,12 +151,11 @@ const teacherSlice = createSlice({
       })
       .addCase(
         getTeachersThunk.fulfilled,
-        (state, action: PayloadAction<Teacher[]>) => {
+        (state, action: PayloadAction<SuccessResponse<Teacher[]>>) => {
           state.isLoading = false;
           state.error = null;
           state.teachersData = action.payload;
-        }
-      )
+        })
       .addCase(getTeachersThunk.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload ? action.payload.toString() : null;
@@ -161,6 +165,5 @@ const teacherSlice = createSlice({
 
 export const teacherReducer = teacherSlice.reducer;
 export const { setFavorites, removeFromFavorites } = teacherSlice.actions;
-
 
 export type AppThunk = ThunkAction<void, RootState, null, Action<string>>;

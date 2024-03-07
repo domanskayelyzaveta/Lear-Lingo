@@ -18,12 +18,10 @@ export interface Teacher {
   experience?: string;
 }
 
-interface SuccessResponse<T> {
+export interface SuccessResponse<T> {
   success: boolean;
   data: T;
 }
-
-type TeachersArrayResponse = Teacher[];
 
 export const BASE_URL = "https://learn-lingo-backend-2.onrender.com/api";
 const $instance = axios.create({ baseURL: BASE_URL });
@@ -31,8 +29,8 @@ const $instance = axios.create({ baseURL: BASE_URL });
 export const fetchTeachers = async (
   page = 1,
   limit = 4
-): Promise<TeachersArrayResponse> => {
-  const { data } = await $instance.get<SuccessResponse<TeachersArrayResponse>>(
+): Promise<SuccessResponse<Teacher[]>> => {
+  const { data } = await $instance.get<SuccessResponse<Teacher[]>>(
     "/teachers",
     {
       params: {
@@ -42,5 +40,5 @@ export const fetchTeachers = async (
     }
   );
 
-  return data.data;
+  return data;
 };
