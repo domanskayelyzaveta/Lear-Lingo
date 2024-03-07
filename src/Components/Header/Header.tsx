@@ -18,7 +18,7 @@ const Header: React.FC = () => {
     <HeaderWrapper>
       <LogoWrapper>
         <FlagIcon />
-        <LinkLogo>LearnLingo</LinkLogo>
+        <LinkLogo to="/">LearnLingo</LinkLogo>
       </LogoWrapper>
       <NavWrapper>
         <NavList>
