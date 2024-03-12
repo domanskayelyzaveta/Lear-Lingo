@@ -4,7 +4,7 @@ import Select, {
   MultiValue,
   SingleValue,
 } from "react-select";
-import { InputWrapper, Label, SelectWrapper } from "./Filter.styled";
+import { FilterWrapper, InputWrapper, Label, SelectWrapper } from "./Filter.styled";
 
 interface OptionType {
   value: string;
@@ -32,6 +32,7 @@ const optionsPrice: OptionType[] = [
 ];
 
 const Filter = () => {
+  
   const handleChange = (
     newValue: MultiValue<OptionType> | SingleValue<OptionType>
   ) => {
@@ -39,7 +40,7 @@ const Filter = () => {
   };
 
   return (
-    <div className="container">
+    <FilterWrapper className="container">
       <SelectWrapper>
         <InputWrapper>
           <Label htmlFor="language">Language</Label>
@@ -72,7 +73,7 @@ const Filter = () => {
           />
         </InputWrapper>
       </SelectWrapper>
-    </div>
+    </FilterWrapper>
   );
 };
 

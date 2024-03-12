@@ -6,6 +6,7 @@
   /* color-scheme: light dark; */
   /* color: rgba(255, 255, 255, 0.87); */
 
+
   --orange: #f4c550;
   --yellow: #fbe9ba;
   --green: #9fbaae;
@@ -24,6 +25,7 @@
   --grey: #8a8a89;
   --light-grey: #12141733;
   --neon-green: #38CD3E;
+  --background-grey: #F8F8F8;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -60,6 +62,7 @@ ul,
 li {
   margin-top: 0;
   margin-bottom: 0;
+  padding: 0;
 }
 
 /* .link {

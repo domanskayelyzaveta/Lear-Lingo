@@ -5,6 +5,10 @@ export const SelectWrapper = styled.div`
   gap: 20px;
 `;
 
+export const FilterWrapper = styled.div`
+  padding-left: 0px;
+`;
+
 export const Label = styled.label`
   color: var(--grey);
 `;

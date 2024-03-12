@@ -1,10 +1,15 @@
+import Filter from "../../Components/Filter/Filter";
 import TeacherCard from "../../Components/TeacherCard/TeacherCard";
+import { Container, TeacherPageWrapper } from "./Teachers.styled";
 
 const Teachers = () => {
   return (
-    <div>
-      <TeacherCard />
-    </div>
+    <TeacherPageWrapper>
+      <Container>
+        <Filter/>
+        <TeacherCard />
+      </Container>
+    </TeacherPageWrapper>
   );
 };
 
